@@ -2,9 +2,9 @@
 
 import random
 import string
-import matplotlib.pyplot as plt
-import pandas
-import numpy as np
+import matplotlib.pyplot as plt  # pip install matplotlib
+import pandas  # pip install pandas
+import numpy as np  # pip install numpy
 
 
 # Creates a standardized array of arrays according to the input with an inputted dice_size and inputted iteration of
