@@ -32,17 +32,14 @@ def run_simulation(sides, roll, iterate):
 # is seriously chugging, the fans are going wild
 # Would recommend keeping the trials limited to around 100,000 unless you have several minutes to spare
 def calculate(sample_data):
+    use_data = sum_arrays(sample_data)
     average_mean = 0
-    count = len(sample_data[0])
-    for i in range(len(sample_data)):
-        temp_average = 0
-        for j in sample_data[i]:
-            temp_average += j
-        average_mean += temp_average / len(sample_data[i])
+    for i in range(len(use_data)):
+        average_mean += use_data[i]
     average_mean = average_mean / len(sample_data)
-    average_standard_dev = np.std(sample_data)
+    average_standard_dev = np.std(use_data)
     variance = np.square(average_standard_dev)
-    return average_mean, average_standard_dev, variance
+    return average_mean, average_standard_dev, variance, use_data
 
 
 # Sums the arrays inside the arrays to get their total "score" this score is then used later in the graphing process
